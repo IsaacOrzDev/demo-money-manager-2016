@@ -15,7 +15,7 @@ The application is built upon the following framework:
         - Express
         - MongoDB
 
-Click Here for a [**Live Demo**](http://localhost:3000/) </br>
+Click Here for a [**Live Demo**](https://moneymanager101-8ca07.firebaseapp.com/) </br>
 (P.S. In demo mode, the data is only stored in front-end, all temporary data will be lost after refreshing or exiting the website)
 
 ## Installation & Usage 
