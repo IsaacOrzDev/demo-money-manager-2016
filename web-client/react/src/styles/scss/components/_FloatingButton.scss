@@ -1,0 +1,103 @@
+.floating-button {
+    outline: 0;
+    height: 70px;
+
+    &_toggle {
+        position: relative;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        background: $color-green-dark;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        cursor: pointer;
+        z-index: 11;
+        box-shadow: 0px 2px 5px $color-black-dark;
+
+        &_icons {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .default-icon, .active-icon {
+            color: $color-white;
+            position: absolute;
+            top: 50%;
+            display: block;
+            left: 50%;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            line-height: 55px;
+            font-size: 2rem;
+            font-weight: 300;
+            @include transform(translate(-50%, -50%));
+            @include transition;
+        }
+
+        .default-icon {
+            opacity: 1;
+            visibility: visible;
+            z-index: 1;
+        }
+
+        .active-icon {
+            opacity: 0;
+            visibility: hidden;
+            z-index: -1;
+        }
+    }
+
+    &_menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        visibility: hidden;
+        @include transition;
+        
+        &--active {
+            visibility: visible;
+            z-index: 11;
+            background-color: rgba($color-black, .4);
+        }
+
+        .menu-item--1 {
+            background: $color-yellow;
+            right: 40px;
+            bottom: 240px;
+        }
+
+        .menu-item--2 {
+            background: $color-blue;
+            right: 40px;
+            bottom: 180px;
+        }
+
+        .menu-item--3 {
+            background: $color-red;
+            right: 40px;
+            bottom: 120px;
+        }
+    }
+}
+
+.floating-button--active {
+
+    .floating-button_toggle .default-icon {
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1;
+        @include transition;
+    }
+
+    .floating-button_toggle .active-icon {
+        opacity: 1;
+        visibility: visible;
+        z-index: 1;
+        @include transition;
+    }
+}

@@ -1,0 +1,25 @@
+.bounce-enter {
+    opacity: 0;
+    visibility: hidden;
+    @include transform(scale(0));
+}
+
+.bounce-enter-active {
+    opacity: 1;
+    visibility: visible;
+    @include transform(scale(1));
+    @include transition(all, 200ms, ease-in);
+}
+  
+.bounce-exit {
+    opacity: 1;
+    visibility: visible;
+    @include transform(scale(1));
+}
+
+.bounce-exit-active {
+    opacity: 0;
+    visibility: hidden;
+    @include transform(scale(0));
+    @include transition(all, 200ms, ease-in);
+}

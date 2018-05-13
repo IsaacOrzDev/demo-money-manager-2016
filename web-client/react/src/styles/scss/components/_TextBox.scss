@@ -1,0 +1,68 @@
+.text-box {
+    @include formInput_outerStyle;
+
+    /* #region Default*/
+    &_input {
+        z-index: 2;
+        @include formInput_defaultStyle;
+    }
+
+    &_placeholder {
+        @include formInput_placeHolder_defaultStyle;       
+    }
+
+    &_desc {
+        @include formInput_description_defaultStyle;
+    }
+
+    &_error {
+        @include formInput_error_defaultStyle;
+    }
+    /* #endregion */
+
+    /* #region Focus*/
+    &_input:focus {
+        border: 1px solid $form-input-focus-color;
+        @include transition;
+    }
+    
+    &_input:focus ~ &_placeholder {
+        @include formInput_placeHolder_focusedStyle;
+    }
+
+    &_input:focus ~ &_desc {
+        @include formInput_description_focusedStyle;
+    }
+    /* #endregion */
+    
+    /* #region  Valid, Disabled*/
+    &_input:valid:not(:focus) {
+        @include formInput_validStyle;
+    }
+
+    &_input:valid:not(:focus) ~ &_desc {
+        color: $form-input-default-desc-color;
+    }
+
+    &_input:disabled {
+        border: 1px solid $form-input-disabled-color;
+        color: $form-input-disabled-color;
+    }
+
+    &_input:disabled ~ &_desc {
+        color: $form-input-disabled-color;
+    }
+
+    &_input:valid:not(:focus) ~ &_desc,
+    &_input:disabled ~ &_desc {
+        opacity: 1;
+        @include transition;
+    }
+
+    &_input:valid:not(:focus) ~ &_placeholder,
+    &_input:disabled ~ &_placeholder {
+        opacity: 0;
+        @include transition;
+    }
+    /* #endregion */
+}

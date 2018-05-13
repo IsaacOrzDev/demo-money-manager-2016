@@ -1,0 +1,38 @@
+.pagination{
+    font-size: 2rem;
+    text-align: center;
+
+    span {
+        display: inline-block;
+        cursor: pointer;
+        height: 3rem;
+        width: 3rem;
+        line-height: 3rem;
+        color: rgba($color-white, .5);
+        @include transition;
+
+        &:hover {
+            color: rgba($color-white, 1);
+            @include transition;
+        }
+
+        &:first-child {
+            margin-left: 1rem;
+        }
+
+        &:last-child {
+            margin-right: 1rem;
+        }
+    }
+
+    span[data-active="true"] {
+        cursor: default;
+        border-radius: 50%;
+        color: $color-white-dark;
+        background: $color-green;
+
+        &:hover {
+            color: $color-white;
+        }
+    }
+}

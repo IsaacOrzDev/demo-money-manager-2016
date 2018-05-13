@@ -1,0 +1,59 @@
+.user-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    box-sizing: border-box;
+    width: 500px;
+    height: 100%;
+    @include transform(translate(-50%, -50%));
+
+    &_title {
+        text-align: center;
+        padding: 10px;
+    }
+
+    &_content {
+        position: relative;
+    }
+
+    &_hint {
+        text-align: center;
+
+        a {
+            cursor: pointer;
+            color: $color-green;    
+        }
+    }
+
+    .sign-in-form {
+        position: absolute;
+        top: 0;
+        left: -2000px;
+        width: 100%;
+        @include transition;
+
+        &--active {
+            left: 0;
+            @include transition;
+        }
+    }
+
+    .sign-up-form {
+        position: absolute;
+        top: 0;
+        right: -2000px;
+        width: 100%;
+        @include transition;
+
+        &--active {
+            right: 0;
+            @include transition;
+        }
+    }
+}
+
+@media screen and (max-width: $grid-min-width-tab) {
+    .sign-form {
+        width: 95%;
+    }
+}

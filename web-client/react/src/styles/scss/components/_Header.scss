@@ -1,0 +1,39 @@
+.header {
+    width: 100%;
+
+    &_content {
+        position: fixed;
+        left: 0;
+        width: 100%;
+        background-color: $color-green-dark;
+        color: $color-white;
+        box-shadow: 1px 5px 8px rgba($color-black-dark, .75);
+        z-index: 6;
+    }
+
+    &_title {
+        text-align: center;
+
+        h2 {
+            line-height: 60px;
+        }
+    }
+
+    &_back-button {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        @include transform(translateY(-50%));
+    }
+
+    &_placeholder {
+        height: 60px;
+    }
+}
+
+.header--top {
+
+    .header_content {
+        top: 0;
+    }
+}

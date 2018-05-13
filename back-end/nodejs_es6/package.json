@@ -1,0 +1,32 @@
+{
+  "name": "money_manager_nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node ./src/index.js",
+    "debug": "babel-node ./src/index.js --inspect",
+    "build": "babel src --out-dir dist --source-maps",
+    "build-watch": "babel src --out-dir dist --source-maps --watch",
+    "eslint": "eslint src/**/*.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "eslint": "^4.19.1"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "dateformat": "^3.0.2",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.1.0",
+    "moment": "^2.22.1",
+    "mongoose": "^4.13.9",
+    "morgan": "^1.9.0"
+  }
+}

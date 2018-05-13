@@ -1,0 +1,40 @@
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Kavivanar', cursive;
+    height: inherit;
+    background-color: $color-black;
+    overflow-y: scroll;
+}
+
+.root {
+    height: inherit;
+}
+
+.app {
+    background-color: inherit;
+    font-size: $default-font-size;
+    padding: 0;
+    height: inherit;
+    width: 100%;
+    color: $color-white;
+    
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
+    
+    input, select, textarea, button{
+        font-family: inherit;
+        font-size: $default-font-size;
+    }
+}

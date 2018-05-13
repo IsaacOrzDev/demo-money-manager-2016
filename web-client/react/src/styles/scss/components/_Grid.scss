@@ -1,0 +1,114 @@
+/*
+xs -> mob
+sm -> tab
+md -> lap
+lg -> des
+*/
+
+$column-gutter-width-mob: .5rem; //1.2rem
+$column-gutter-width-tab: 1.5rem;
+$column-gutter-width-lap: 1.8rem;
+$column-gutter-width-des: 2rem;
+$row-gutter-height: 1.5rem;
+
+$column-1-width: 16.66%;
+$column-2-width: 33.33%;
+$column-3-width: 50%;
+$column-4-width: 66.664%;
+$column-5-width: 83.33%;
+$column-6-width: 100%;
+
+@mixin column-width($name, $gutter) {
+
+    .col-0-#{$name} { width: 0%; }
+    .col-1-#{$name} { width: $column-1-width; }
+    .col-2-#{$name} { width: $column-2-width; }
+    .col-3-#{$name} { width: $column-3-width; }
+    .col-4-#{$name} { width: $column-4-width; }
+    .col-5-#{$name} { width: $column-5-width; }
+    .col-6-#{$name} { width: $column-6-width; }
+
+    [class*='col-']:not([class*='col-0-#{$name}']) {
+        padding-left: $gutter;
+    }
+
+    [class*='col-']:last-child:not([class*='col-0-#{$name}']), [class*='col-6-'] {
+        padding-right: $gutter;
+    }
+
+    [class*='col-6-']:not(:last-child) {
+        padding-bottom: $row-gutter-height;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: $content-max-width;
+    margin: 0 auto;
+    padding: 10px 20px;
+    box-sizing: border-box;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .row {
+        padding-bottom: $row-gutter-height;
+        &:before,
+        &:after {
+            @include clearfix;
+        }
+    }
+
+    [class*='col-'] {
+        float: left;
+        min-height: 1px;
+        box-sizing: border-box;
+    }
+
+    @include column-width(mob, $column-gutter-width-mob);
+
+    @media (max-width: $grid-min-width-tab) {
+        padding: 10px 5px;
+    }
+
+    @media (min-width: $grid-min-width-tab) {
+        @include column-width(tab, $column-gutter-width-tab);
+    }
+
+    @media (min-width: $grid-min-width-lap) {
+        @include column-width(lap, $column-gutter-width-lap);
+    }
+
+    @media (min-width: $grid-min-width-des) {
+        @include column-width(des, $column-gutter-width-des);
+    }
+}
+
+.visible {
+    display: none;
+}
+
+@media screen and (max-width: $grid-min-width-tab) {
+    .visible-mob {
+        display: block;
+    }
+}
+
+@media screen and (min-width: $grid-min-width-tab + 1px) and (max-width: $grid-min-width-lap) {
+    .visible-tab {
+        display: block;
+    }
+}
+
+@media screen and (min-width: $grid-min-width-lap + 1px) and (max-width: $grid-min-width-des) {
+    .visible-lap {
+        display: block;
+    }
+}
+
+@media screen and (min-width: $grid-min-width-des + 1px) {
+    .visible-des {
+        display: block;
+    }
+}

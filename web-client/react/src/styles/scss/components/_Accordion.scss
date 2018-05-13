@@ -1,0 +1,59 @@
+.accordion {
+
+    &_collapse-part {
+        padding: 10px 15px;
+        background-color: $color-black-light;
+        cursor: default;
+        color: $color-white;
+        border: 1px solid $color-grey;
+        position: relative;
+
+        &:not(:first-child) {
+            border-top: 0;
+        }
+
+        &_title {
+            width: 100%;
+            text-align: left;
+            font-size: 2.5rem;
+        }
+
+        &_icon {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            @include transform(translateY(-50%));
+        }
+    }
+
+    &_collapse-part--active {
+        cursor: pointer;
+
+        &:hover {
+            background-color: $color-black-light-2;
+        }
+    }
+
+    &_expand-part {
+        background-color: $color-black;
+        padding: 0 15px;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        max-height: 0;
+        @include transition($time: .2s);
+    }
+
+    &_row--active &_expand-part {
+        padding: 10px 15px;
+        max-height: 500px;
+        @include transition($time: .2s);
+    }
+
+    &_row--active &_icon--default {
+        display: none;
+    }
+
+    &_row--active &_icon--closed {
+        display: block;
+    }
+}

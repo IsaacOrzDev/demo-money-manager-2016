@@ -1,0 +1,115 @@
+.drop-down-list {
+    @include formInput_outerStyle;
+
+    /* #region Default*/
+    &_select {
+        z-index: 2;
+        height: 39px;
+        @include formInput_defaultStyle;
+    }
+
+    &_placeholder {
+        @include formInput_placeHolder_defaultStyle;      
+    }
+
+    &_desc {
+        @include formInput_description_defaultStyle;
+    }
+
+    &_error {
+        @include formInput_error_defaultStyle;
+    }
+
+    &_select_options {
+        display: block;
+        height: 0;
+        list-style: none;
+        opacity: 0;
+        overflow: hidden;
+        border: 1px solid $form-input-focus-color;
+        width: 100%;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        background-color: $color-black;
+        @include transition;
+        
+        li > a {
+            display: block;
+            text-decoration: none;
+            color: $form-input-default-color;
+            width: 100%;
+            padding: 5px 4px;
+            @include transition;
+
+            &:hover {
+                background-color: $form-input-focus-color;
+            }
+        }
+    }
+    
+    &_select_confirm a {
+        text-align: center;
+        text-transform: uppercase;
+        background-color: $color-black-dark;
+        color: $color-white!important;
+    }
+    /* #endregion */
+
+    /* #region Focus*/
+    &_select--focus {
+        z-index: 3;
+        border: 1px solid transparent;
+        @include transition;
+    }
+
+    &_select--focus ~ &_placeholder {
+        @include formInput_placeHolder_focusedStyle; 
+    }
+
+    &_select--focus ~ &_desc {
+        @include formInput_description_focusedStyle;
+    }
+
+    &_select--focus > &_select_options {
+        opacity: 1;
+        height: auto;
+        @include transition;
+    }
+    /* #endregion */
+
+    /* #region Valid and Disabled*/
+    &_select--valid {
+        @include formInput_validStyle;
+    }
+
+    &_select--valid ~ &_desc {
+        color: $form-input-default-desc-color;
+    }
+
+    &_select--disabled {
+        border: 1px solid $form-input-disabled-color;
+    }
+
+    &_select--disabled ~ &_desc, {
+        color: $form-input-disabled-color;
+    }
+
+    &_select--disabled > &_select_value {
+        color: $form-input-disabled-color;
+    }
+    
+    &_select--valid ~ &_desc,
+    &_select--disabled ~ &_desc {
+        opacity: 1;
+        @include transition;
+    }
+
+    &_select--valid ~ &_placeholder,
+    &_select--disabled ~ &_placeholder {
+        opacity: 0;
+        @include transition;
+    }
+    /* #endregion */
+}

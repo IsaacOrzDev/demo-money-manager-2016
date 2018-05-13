@@ -1,0 +1,21 @@
+.fade-enter {
+    opacity: 0; 
+    visibility: hidden;
+}
+
+.fade-enter-active {
+    opacity: 1;
+    visibility: visible;
+    @include transition(opacity, 200ms, ease-in);
+}
+  
+.fade-exit {
+    opacity: 1;
+    visibility: visible;
+}
+
+.fade-exit-active {
+    opacity: 0;
+    visibility: hidden;
+    @include transition(opacity, 200ms, ease-in);
+}

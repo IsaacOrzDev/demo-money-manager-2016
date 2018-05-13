@@ -1,0 +1,25 @@
+{
+    // 使用 IntelliSense 以得知可用的屬性。
+    // 暫留以檢視現有屬性的描述。
+    // 如需詳細資訊，請瀏覽: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Express",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/src/index.js",
+            "stopOnEntry": false,
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": "build",
+            "runtimeExecutable": null,
+            "runtimeArgs": [ "--nolazy" ],
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "sourceMaps": true,
+            "outFiles": ["${workspaceRoot}/dist/**.js"]
+        }
+    ]
+}

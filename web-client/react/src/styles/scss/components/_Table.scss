@@ -1,0 +1,178 @@
+$default-table-color: $color-grey-light;
+$table-header-color: $color-white;
+$table-header-font-weight: 700;
+$hover-table-color: $color-green;
+
+.table {
+    padding: 0 $default-component-left-right-padding;
+
+    table {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        border-collapse: collapse;
+        border: 1px solid $default-table-color;
+    }
+
+    th, td {
+        text-align: left;
+        vertical-align: top;
+        border-top: 0;
+    }
+
+    th {
+        padding: 1rem 1.7rem;
+        font-weight: $table-header-font-weight;
+        color: $table-header-color;
+        vertical-align: bottom;
+        text-transform: uppercase;
+    }
+
+    tbody td {
+        padding: 1.3rem 1.7rem;
+    }
+}
+
+.table--editable {
+    tfoot tr {
+        border-top: 1px solid $default-table-color;
+    }
+}
+
+.table--selectable {
+    thead tr {
+        border-bottom: 1px solid $default-table-color;
+    }
+
+    tbody tr {
+        cursor: pointer;
+        @include transition($time: .3s, $function: ease);
+
+        &:hover {
+            background-color: $hover-table-color;
+            @include transition($time: .3s, $function: ease);
+        }
+
+        & * {
+            cursor: pointer;
+        }
+    }
+}
+
+@media screen and (max-width: $grid-min-width-tab) {
+    .table {
+        thead {
+            display: none;
+        }
+
+        tr {
+            border-top: 1px solid $default-table-color;
+        }
+
+        td {
+            display: block;
+
+            &[data-title]::before {
+                content: attr(data-title);
+                float: left;
+                font-size: inherit;
+                font-weight: $table-header-font-weight;
+                text-transform: uppercase;
+                color: $table-header-color;
+                padding-right: 1.6rem;
+                padding-bottom: 1.2rem;
+            }
+        }
+    }
+
+    .table--editable {
+        tbody tr:last-child {
+            display: none;
+        }
+    }
+
+    .table--selectable {
+
+        tbody tr td {
+            clear: both;
+        }
+
+        tbody .table_label {
+            float: right;
+        }
+    }
+}
+
+.table_text-box {
+
+    &_input {
+        width: 100%;
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        color: $default-table-color;
+        border-bottom: 1px solid $default-table-color;
+        @include transition;
+
+        &:focus {
+            border-bottom: 1px solid $hover-table-color;
+            @include transition;
+        }        
+    }
+
+    &_error {
+        @include formInput_error_defaultStyle;
+    }
+
+}
+
+.table_close-button, .table_add-button {
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    font-weight: 400;
+    color: $default-table-color;
+    padding: 0 .3rem;
+    @include transition;
+
+    &:hover {
+        @include transition;
+    }
+}
+
+.table_close-button:hover {
+    color: $color-red;
+}
+
+.table_add-button {
+    padding: .5rem 1rem;
+
+    &:hover {
+        background-color: $hover-table-color;
+        color: $color-black;
+    }
+}
+
+.table_label {
+    color: $color-white-dark;
+}
+
+.table_label--income {
+    background-color: $color-blue;
+    border-radius: 5px;
+    padding: 5px 5px;
+    width: 9rem;
+    display: inline-block;
+    text-align: center;
+}
+
+.table_label--expense {
+    background-color: $color-red;
+    border-radius: 5px;
+    padding: 5px 5px;
+    width: 9rem;
+    display: inline-block;
+    text-align: center;
+}

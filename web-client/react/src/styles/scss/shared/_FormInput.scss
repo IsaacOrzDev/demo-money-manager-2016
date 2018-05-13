@@ -1,0 +1,85 @@
+/* #region Variables*/
+$form-input-padding-top-bottom: 1rem;
+$form-input-padding-left-right: $default-component-left-right-padding;
+$form-input-inner-padding-top-bottom: .7rem;
+$form-input-inner-padding-left-right: 1.4rem;
+$form-input-placeholder-color: $color-grey;
+$form-input-default-border-color: $form-input-default-color;
+$form-input-default-placeholder-color: $color-white; 
+$form-input-default-background-color: transparent;
+$form-input-desc-font-size: 1.2rem;
+$form-input-desc-left: $form-input-padding-left-right;
+$form-input-desc-top: $form-input-padding-top-bottom - $form-input-desc-font-size - 0.5rem;
+$form-input-placeholder-left: $form-input-padding-left-right + $form-input-inner-padding-left-right;
+$form-input-placeholder-top: $form-input-padding-top-bottom + $form-input-inner-padding-top-bottom;
+/* #region */
+
+/* #region Mixin*/
+@mixin formInput_outerStyle {
+    width: 100%;
+    position: relative;
+    text-align: left;
+    padding: $form-input-padding-top-bottom $form-input-padding-left-right;
+}
+
+@mixin formInput_defaultStyle {
+    border: 1px solid transparent;
+    border-bottom: 1px solid $form-input-default-border-color;
+    padding: $form-input-inner-padding-top-bottom $form-input-inner-padding-left-right; 
+    background-color: $form-input-default-background-color;
+    outline: 0;
+    width: 100%;
+    color: $form-input-default-placeholder-color;
+    position: relative;
+    @include transition;
+}
+
+@mixin formInput_validStyle {
+    border-bottom: 1px solid $form-input-default-border-color;
+    @include transition;
+}
+
+@mixin formInput_placeHolder_defaultStyle {
+    position: absolute;
+    left: $form-input-placeholder-left;
+    top:  $form-input-placeholder-top;
+    color: $form-input-default-placeholder-color;
+    z-index: 1;
+    letter-spacing: 0.5px;
+    opacity: 1;
+    color: $form-input-placeholder-color;
+    text-align: left;
+    text-transform: uppercase;
+    @include transition;
+}
+
+@mixin formInput_description_defaultStyle {
+    position: absolute;
+    left: $form-input-desc-left;
+    top: $form-input-desc-top;
+    font-size: $form-input-desc-font-size;
+    opacity: 0;
+    text-transform: uppercase;
+    @include transition;
+}
+
+@mixin formInput_placeHolder_focusedStyle {
+    top: $form-input-desc-top;
+    left: $form-input-desc-left;
+    font-size: $form-input-desc-font-size;
+    color: $form-input-focus-color;
+    opacity: 0;
+    @include transition;  
+}
+
+@mixin formInput_description_focusedStyle {
+    color: $form-input-focus-color;
+    opacity: 1;
+    @include transition;
+}
+
+@mixin formInput_error_defaultStyle {
+    padding-top: 5px;
+    color: $color-yellow;
+}
+/* #endregion */

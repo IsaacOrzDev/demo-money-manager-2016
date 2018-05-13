@@ -1,0 +1,39 @@
+{
+  "name": "money_manager_react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.17.1",
+    "chart.js": "^2.7.2",
+    "history": "^4.7.2",
+    "moment": "^2.20.1",
+    "react": "^16.2.0",
+    "react-chartjs-2": "^2.7.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.17",
+    "react-transition-group": "^2.2.1",
+    "redux": "^3.7.2",
+    "redux-persist": "^4.8.2",
+    "redux-persist-cookie-storage": "^0.4.0",
+    "redux-thunk": "^2.2.0"
+  },
+  "scripts": {
+    "demo": "npm run sass-build && cross-env REACT_APP_MODE=demo react-scripts start",
+    "start": "npm run sass-build && cross-env REACT_APP_MODE=development react-scripts start",
+    "build": "npm run sass-build && cross-env REACT_APP_MODE=production react-scripts build",
+    "build-demo": "npm run sass-build && cross-env REACT_APP_MODE=demo react-scripts build",
+    "eject": "react-scripts eject",
+    "flow": "flow",
+    "sass": "npm run sass-build && npm run sass-watch",
+    "sass-build": "node-sass src/styles/scss/ -o src/styles/css",
+    "sass-watch": "node-sass src/styles/scss/ -o src/styles/css/ -w"
+  },
+  "devDependencies": {
+    "cross-env": "^5.1.4",
+    "flow-bin": "^0.61.0",
+    "node-sass": "^4.7.2"
+  }
+}

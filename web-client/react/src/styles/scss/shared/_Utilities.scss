@@ -1,0 +1,17 @@
+@mixin clearfix {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+@mixin transition($properties: all, $time: $default-transition-time, $function: "") {
+    -webkit-transition: $properties $time unquote($function);
+    -o-transition: $properties $time unquote($function);
+    transition: $properties $time unquote($function);
+}
+
+@mixin transform ($parameters...) {
+    -webkit-transform: $parameters;
+    -moz-transform: $parameters;
+    transform: $parameters;
+}

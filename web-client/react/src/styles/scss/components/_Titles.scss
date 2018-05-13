@@ -1,0 +1,28 @@
+.app-title {
+    background-color: $color-black;
+    width: 100%;
+    text-align: center;
+    color: $color-white;
+    @include transition($time: .25s, $function: ease);
+
+    h1 {
+        line-height: 25px;
+        font-size: 1.7rem!important;
+        padding: 4px 0;
+        line-height: 25px;
+        box-shadow: 1px 5px 8px rgba(0, 0, 0, .75);
+    }
+}
+
+.app-title--invisible {
+    height: 0;
+    visibility: hidden;
+    @include transition($time: .25s, $function: ease);
+}
+
+.number-title {
+    display: block;
+    width: 100%;
+    font-size: 3rem;
+    text-align: center;
+}

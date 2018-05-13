@@ -1,0 +1,19 @@
+.button-group {
+    @include clearfix;
+    
+    &_item {
+        float: left;
+        display: block;
+        outline: 0;
+        border: 1px solid $color-white;
+        color: $color-white;
+        background-color: inherit;
+        padding: 10px 20px;
+        width: 10rem;
+        cursor: pointer;
+    }
+
+    &_item--active {
+        background-color: $color-black;
+    }
+}

@@ -1,0 +1,21 @@
+.balance-report {
+    border-radius: 5px;
+    padding: 1rem 1.5rem;
+    width: 100%;
+
+    td {
+        padding: .5rem 0;
+    }
+
+    &_description {
+        font-size: 1.4rem;
+    }
+
+    &_value {
+        display: block;
+        width: 100%;
+        text-align: right;
+        font-size: 1.6rem;
+    }
+
+}

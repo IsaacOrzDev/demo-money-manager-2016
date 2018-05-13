@@ -1,0 +1,84 @@
+$block-button-line-height: 20px;
+$block-button-padding-top-bottom: 10px;
+$block-button-padding-icon-left-right: 12px;
+
+@mixin block-button_icon($color) {
+    font-size: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: $block-button-padding-top-bottom $block-button-padding-icon-left-right;
+    background-color: darken($color, 10%);
+    color: inherit;
+    @include transition;
+}
+
+@mixin hover_block-button_icon($color) {
+    background-color: darken($color, 20%);
+    @include transition;
+}
+
+@mixin block-button_color($color) {
+    a {
+        background-color: $color;
+        color: $color-black;
+    
+        span.block-button_icon {
+            @include block-button_icon($color);
+            transition: all .2s;
+        }
+      
+        &:hover {
+            background-color: darken($color, 10%);
+    
+            span.block-button_icon {
+                @include hover_block-button_icon($color)
+            }
+        }
+    }
+}
+
+.block-button {
+    padding: 0 $default-component-left-right-padding;
+
+    a {
+        width: 100%;
+        font-size: 1.6rem;
+        line-height: 20px;
+        text-decoration: none;
+        position: relative;
+        padding: $block-button-padding-top-bottom;
+        padding-left: $block-button-padding-icon-left-right * 2;
+        display: inline-block;
+        text-align: center;
+        box-sizing: border-box;
+        width: 100%;
+        cursor: pointer;
+        box-shadow: 1px 5px 8px rgba($color-black-dark, .75);
+        @include transition;
+    }
+
+    &_icon {
+        font-size: 1.5rem;
+    }
+}
+
+.block-button--green {
+    @include block-button_color($color-green-dark);
+
+    a {
+        color: $color-white;
+    }
+}
+
+.block-button--red {
+    @include block-button_color($color-red);
+}
+
+.block-button--blue {
+    @include block-button_color($color-blue);
+}
+
+.block-button--yellow {
+    @include block-button_color($color-yellow);
+}

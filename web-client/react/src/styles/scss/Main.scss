@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Kavivanar');
+@import url('http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
+
+/* #region Import shared scss*/
+@import './shared/_GlobalVariables.scss';
+@import './shared/_Root.scss';
+@import './shared/_Utilities.scss';
+@import './shared/_FormInput.scss';
+/* #endregion */
+
+/* #region Import components scss*/
+@import './components/_Grid.scss';
+@import './components/_Titles.scss';
+@import './components/_LineBreak.scss';
+@import './components/_BlockButton.scss';
+@import './components/_IconButton.scss';
+@import './components/_TextBox.scss';
+@import './components/_DropDownList.scss';
+@import './components/_DatePicker.scss';
+@import './components/_Checkbox.scss';
+@import './components/_Table.scss';
+@import './components/_Pagination.scss';
+@import './components/_Card.scss';
+@import './components/_Float.scss';
+@import './components/_DropDownButton.scss';
+@import './components/_ButtonGroup.scss';
+@import './components/_Tabs.scss';
+@import './components/_Accordion.scss';
+@import './components/_Notification.scss';
+@import './components/_Loader.scss';
+@import './components/_Empty.scss';
+@import './components/_Header.scss';
+@import './components/_HomeHeader.scss';
+@import './components/_SearchBox.scss';
+@import './components/_BalanceReport.scss';
+@import './components/_FloatingButton.scss';
+/* #endregion */
+
+/* #region Import pages scss*/
+@import './pages/_UserForm.scss';
+/* #endregion */
+
+/* #region Import animations scss*/
+@import './animations/_Fade.scss';
+@import './animations/_Bounce.scss';
+/* #endregion */

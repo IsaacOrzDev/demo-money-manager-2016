@@ -1,0 +1,355 @@
+$header-home-nav-height: 60px;
+$header-home-nav-item-height: 40px;
+$header-home-nav-button-height: 30px;
+$header-home-nav-button-padding-top-bottom: ($header-home-nav-item-height - $header-home-nav-button-height) / 2; 
+$header-home-nav-item-gutter: 2.5rem;
+$header-home-nav-default-padding-top-bottom: ($header-home-nav-height - $header-home-nav-item-height) / 2;
+$header-home-nav-default-padding-left-right: $header-home-nav-default-padding-top-bottom * 2;
+$header-home-nav-default-background-color: $color-green-dark;
+$header-home-nav-extend-background-color: $color-black-light;
+$header-home-toggle-width: 35px;
+$header-home-menu-width: 40rem;
+$header-home-tabs-height: 45px;
+
+.header-home {
+    width: 100%;
+
+    &_nav {
+        background-color: $header-home-nav-default-background-color;
+        font-size: 1.6rem;
+        box-shadow: 1px 5px 8px rgba($color-black, .75);
+    }
+
+    &_placeHolder {
+        height: 0;
+    }
+
+    &_toggle {
+        position: fixed;
+        top: 33px;
+        left: 0;
+        width: $header-home-toggle-width;
+        height: $header-home-nav-height;
+        background-color: $header-home-nav-extend-background-color;
+        color: $color-white;
+        border: none;
+        vertical-align: middle;
+        outline: none;
+        cursor: pointer;
+        font-size: 2rem!important;
+        z-index: 11;
+        @include transition($time: .25s, $function: ease);
+
+        .toggle_default {
+            display: block;
+        }
+
+        .toggle_close {
+            display: none;
+        }
+
+        span {
+            @include transition($time: .25s, $function: ease);
+        }
+    
+        &:hover {
+            width: 50px;
+        }
+    }
+
+    &_toggle--active {
+
+        .toggle_default {
+            display: none;
+        }
+
+        .toggle_close {
+            display: block;
+        }
+    }
+
+    &_menu {
+        overflow-y: auto;
+        position: fixed;
+        top: 0;
+        left: -100px;
+        background-color: $header-home-nav-extend-background-color;
+        width: 0;
+        height: 100%;
+        visibility: hidden;
+        box-shadow: 1px 5px 8px rgba($color-black-dark, .75);
+        padding: $header-home-nav-default-padding-top-bottom $header-home-nav-default-padding-left-right;
+        box-sizing: border-box;
+        z-index: 12;
+        overflow-y: scroll;
+        @include transition($time: .25s, $function: ease);
+
+        & > * {
+            opacity: 0;
+        }
+
+        .user-content {
+            width: 100%;
+            position: relative;
+            text-align: center;
+            
+            .user-icon {
+                outline: 0;
+                border: 0;
+                color: $color-white;
+                text-align: center;
+                font-size: 2.5em!important;
+                line-height: 5rem;
+                background-color: $color-black;
+                border-radius: 50%;
+                width: 5rem;
+                height: 5rem;
+                margin: 0 auto;
+            }
+
+            .user-name {
+                color: $color-white;
+                font-size: 2rem;
+                display: block;
+            }
+
+            .user-email {
+                color: $color-grey-light;
+                font-size: 1.2rem;
+                display: block;
+            }
+        }
+
+        &_cover {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            z-index: 11;
+            opacity: 0;
+            background-color: rgba($color-black, .4);
+            @include transition($properties: opacity, $time: .25s, $function: ease);
+        }
+
+        .log-out {
+            text-align: center;
+
+            &_button {
+                display: inline;
+                border: 1px solid;
+                padding: 1rem 2rem;
+                font-size: 1.8rem;
+                text-align: center;
+                cursor: pointer;
+                @include transition;
+
+                &:hover {
+                    background-color: $color-black-dark;
+                }
+            }
+        }
+    }
+
+    &_toggle--active + &_menu {
+        left: 0;
+        width: $header-home-menu-width;
+        visibility: visible;
+
+        & > * {
+            opacity: 1;
+        }
+    }
+
+    &_toggle--active ~ &_menu_cover {
+        width: 100%;
+        opacity: 1;
+
+    }
+
+    &_tabs {
+        position: fixed;
+        top: $header-home-nav-height;
+        left: 0;
+        width: 100%;
+        height: $header-home-tabs-height;
+        box-shadow: 1px 5px 5px rgba($color-black-dark, .75);
+        z-index: 10;
+    }
+}
+
+.header-home--fixed {
+
+    .app-title {
+        height: 0;
+        visibility: hidden;
+        @include transition;
+    }
+
+    .header-home_nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+    }
+
+    .header-home_placeholder {
+        height: $header-home-nav-height;
+    }
+
+    .header-home_toggle {
+        top: 0;
+    }
+}
+
+.header-home_nav .nav {
+    position: relative;
+    height: $header-home-nav-height;
+    max-width: $content-max-width;
+    text-align: center;
+    margin: 0 auto;
+    padding: $header-home-nav-default-padding-top-bottom 0;
+    padding-left: 50px;
+    box-sizing: border-box;
+    width: 100%;
+    @include transition($time: .25s, $function: ease);
+
+    &_content {
+        width: 100%;
+        @include clearfix;
+
+        &_center {
+            position: absolute;
+            left: 50%;
+            @include transform(translateX(-50%));
+        }
+    }
+
+    &_title {
+        line-height: $header-home-nav-item-height;
+    }
+
+    &_title-mob {
+        position: absolute;
+        top: $header-home-nav-default-padding-top-bottom;
+        left: 0;
+        width: 100%;
+        line-height: $header-home-nav-item-height;
+    }
+
+    &_control {
+        padding: $header-home-nav-button-padding-top-bottom 0;
+        margin-right: $header-home-nav-item-gutter;
+        position: relative;
+    }
+
+    &_control-search {
+
+        & > * {
+            float: left;
+        }
+    }
+
+    &_control-add {
+
+        .add-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            visibility: hidden;
+            @include transition;
+            
+            &--active {
+                visibility: visible;
+                z-index: 11;
+                background-color: rgba($color-black, .4);
+            }
+
+            .menu-item--1 {
+                background: $color-blue;
+                right: 40px;
+                top: 120px;
+            }
+
+            .menu-item--2 {
+                background: $color-red;
+                right: 40px;
+                top: 180px;
+            }
+        }
+    }
+
+    &_extension {
+        position: absolute;
+        top: $header-home-nav-height;
+        right: 0;
+        max-height: 0;
+        visibility: hidden;
+        padding: $header-home-nav-default-padding-top-bottom 20px;
+        box-sizing: border-box;
+        background-color: $color-black-dark;
+        box-shadow: 1px 5px 5px rgba($color-black-dark, .75);
+        width: 100%;
+        z-index: 12;
+        @include transition($time: .25s, $function: ease);
+
+        & > * {
+            opacity: 0;
+        }
+    }
+
+    &_extension--active {
+        max-height: 1000px;
+        visibility: visible;
+        @include transition($time: .25s, $function: ease);
+
+        & > * {
+            opacity: 1;
+        }
+    }
+}
+
+@media screen and (max-width: $content-max-width) {
+    .header-home_nav {
+
+        .nav {
+            padding: $header-home-nav-default-padding-top-bottom $header-home-nav-default-padding-left-right;
+            padding-left: $header-home-nav-default-padding-left-right + $header-home-toggle-width;
+        }
+    }
+}
+
+@media screen and (max-width: $grid-min-width-tab) {
+    .header-home_toggle {
+        top: 0;
+        background-color: $header-home-nav-default-background-color;
+    }
+
+    .header-home_toggle--active + .header-home_menu {
+        width: 100%;
+    }
+
+    .header-home_nav .nav { 
+        padding: $header-home-nav-default-padding-top-bottom 0;
+        padding-left: $header-home-nav-default-padding-left-right + $header-home-toggle-width;
+
+        &_control {
+            margin-right: $header-home-nav-item-gutter - 1.5rem;
+        }
+
+        &_extension {
+            top: $header-home-nav-height + $header-home-tabs-height;
+        }
+
+        &_extension--active {
+            height: 100vh;
+        }
+    }
+
+    .header-home_placeholder {
+        height:  $header-home-tabs-height;
+    }
+}

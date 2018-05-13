@@ -1,0 +1,55 @@
+.checkbox {
+    width: 100%;
+    padding: 1rem 2rem;
+
+    &_group {
+        display: inline-block;
+
+        & > * {
+            float: left;
+            padding: 0.5rem 0;
+        }
+    }
+    
+    input[type="checkbox"] {
+        font-size: 2rem;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 3.5em;
+        height: 1.5em;
+        background: $color-grey-light;
+        border-radius: 3em;
+        position: relative;
+        cursor: pointer;
+        outline: none;
+        @include transition($time: .2s, $function: ease-in-out);
+
+        &:after {
+            position: absolute;
+            content: "";
+            width: 1.5em;
+            height: 1.5em;
+            border-radius: 50%;
+            background: $color-white-dark;
+            -webkit-box-shadow: 0 0 .25em rgba($color-black, .3);
+            box-shadow: 0 0 .25em rgba($color-black, .3);
+            left: 0;
+            top: 0;
+            @include transition($time: .2s, $function: ease-in-out);
+            @include transform(scale(.8));
+        }
+
+        &:checked {
+            background: $color-green;
+        }
+
+        &:checked:after {
+            left: calc(100% - 1.5em);
+        }
+    }
+
+    &_description {
+        padding-right: 2rem;
+    }
+}

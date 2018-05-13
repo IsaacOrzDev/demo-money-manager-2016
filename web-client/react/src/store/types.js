@@ -1,0 +1,58 @@
+// @flow
+export const CLEAR_STATE = 'CLEAR_STATE';
+
+//#region transaction
+export const RESET_TRANSACTION = 'RESET_TRANSACTION';
+export const SETUP_NEW_INCOME = 'SETUP_NEW_INCOME';
+export const SETUP_NEW_WITHDRAW = 'SETUP_NEW_WITHDRAW';
+export const SELECT_TRANSACTION_RECORD = 'SELECT_TRANSACTION_RECORD';
+export const RELOAD_TRANSACTION_RECORDS = 'RELOAD_TRANSACTION_RECORDS';
+//#endregion
+
+//#region account
+export const RELOAD_ACCOUNT_RECORDS = 'RELOAD_ACCOUNT_RECORDS';
+export const CHANGE_CURRENT_ACCOUNT = 'CHANGE_CURRENT_ACCOUNT';
+//#endregion
+
+//#region search
+export const LOAD_SEARCH_RESULTS = 'LOAD_SEARCH_RESULTS';
+export const CLEAR_SEARCH_RESULTS = 'CLEAR_SEARCH_RESULTS';
+//#endregion
+
+//#region filter
+export const SET_FILTER_PARAMETERS = 'SET_FILTER_PARAMETERS';
+//#endregion
+
+//#region report
+export const RELOAD_BALANCE_LINE_CHART = 'RELOAD_BALANCE_LINE_CHART';
+export const RELOAD_IN_OUT_LINE_CHART = 'RELOAD_IN_OUT_LINE_CHART';
+export const RELOAD_INCOME_PIE_CHART = 'RELOAD_INCOME_PIE_CHART';
+export const RELOAD_EXPENSE_PIE_CHART = 'RELOAD_EXPENSE_PIE_CHART';
+//#endregion
+
+//#region notification
+export const ADD_NOTIFICATION = 'ADD_NOTIFICATION';
+export const CLEAR_NOTIFICATION = 'CLEAR_NOTIFICATION';
+//#endregion
+
+//#region loading
+export const ENABLE_LOADING = 'ENABLE_LOADING';
+export const DISABLE_LOADING = 'DISABLE_LOADING';
+export const SET_REHYDRATION_STATUS = 'SET_REHYDRATION_STATUS';
+export const SET_AUTHORIZATION_STATUS = 'SET_AUTHORIZATION_STATUS';
+export const RESET_AUTHORIZATION_STATUS = 'RESET_AUTHORIZATION_STATUS';
+//#endregion
+
+//#region user
+export const RELOAD_USER_INFO = 'RELOAD_USER_INFO';
+//#endregion
+
+//#region persistence
+export const SET_PERSISTENCE_TOKEN = 'SET_PERSISTENCE_TOKEN';
+//#endregion
+
+//#region demo
+export const RELOAD_DEMO_DATA = 'RELOAD_DEMO_DATA';
+export const SAVE_MODIFIED_DEMO_TRANSACTION = 'SAVE_MODIFIED_DEMO_TRANSACTION';
+export const SAVE_NEW_DEMO_TRANSACTION = 'SAVE_NEW_DEMO_TRANSACTION';
+//#endregion

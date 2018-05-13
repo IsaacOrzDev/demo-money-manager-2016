@@ -1,0 +1,35 @@
+.tabs {
+    width: 100%;
+    @include clearfix;
+
+    &_tab-item {
+        float: left;
+        width: 50%;
+
+        .tab-item_toggle {
+            display: none;
+        } 
+    
+        .tab-item_label {
+            cursor: pointer;
+            color: $color-white;
+            background-color: $color-green-dark;
+            box-sizing: border-box;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 45px;
+            transition: color 0.2s ease;
+            width: 100%;
+            text-transform: uppercase;
+            @include transition;
+        }
+        
+        .tab-item_label--checked {
+            color: $color-white;
+            border-bottom: 4px solid $color-yellow; 
+            @include transition;
+        }
+    }
+}

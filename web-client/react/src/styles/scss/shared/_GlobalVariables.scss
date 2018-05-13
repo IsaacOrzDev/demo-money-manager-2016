@@ -1,0 +1,28 @@
+$color-white: #fff;
+$color-white-dark: #e6e6e6;
+$color-white-dark-2: #f8f8f8;
+$color-black-dark: #000;
+$color-black: #303036;
+$color-black-light: #54545f;
+$color-black-light-2: #484851;
+$color-grey: #a6a6a6;
+$color-grey-light: #ddd;
+$color-green: #3c3;
+$color-green-dark: #339966;
+$color-red: #cb0e01;
+$color-blue: #009ED8;
+$color-yellow: #ffb366;
+
+$grid-min-width-tab: 768px; //max-width-mob
+$grid-min-width-lap: 992px; //max-width-tab
+$grid-min-width-des: 1200px; //max-width-lap
+$content-max-width: 1200px;
+
+$default-font-size: 1.4rem;
+$default-component-left-right-padding: 1.5rem;
+$default-transition-time: .4s;
+
+$form-input-default-color: $color-grey-light;
+$form-input-focus-color: $color-green;
+$form-input-default-desc-color: $form-input-default-color;
+$form-input-disabled-color: $color-grey;
