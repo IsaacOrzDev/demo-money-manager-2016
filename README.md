@@ -35,5 +35,13 @@ To start web project in demo mode
 2. `npm run demo --prefix ./web-client/react`
 3. visit `http://localhost:3000`
 
-
+# TODO
+- Web Client
+    - [x] React
+- Desktop Client
+    - [ ] Electron 
+- Mobile Client
+    - [ ] React Native
+- Back End
+    - [x] Node.js (ES6)
 
